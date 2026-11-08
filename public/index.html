@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <title>Institutional SMC Analyzer</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">S</span><div><strong>INSTITUTIONAL SMC</strong><small>EDUCATIONAL CHART ANALYZER</small></div></div>
+    <span class="status"><i></i> MVP</span>
+  </header>
+
+  <main class="wrap">
+    <section class="intro">
+      <p class="eyebrow">SMART MONEY CONCEPTS</p>
+      <h1>Understand the structure.<br><span>Read the chart.</span></h1>
+      <p class="sub">Upload a chart screenshot to prepare an educational market-structure analysis.</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><div><h2>Chart input</h2><p>Use a clear screenshot with price and timeframe visible.</p></div><span class="step">01 / INPUT</span></div>
+      <form id="analysisForm">
+        <label class="upload" for="chartFile" id="dropArea">
+          <input id="chartFile" name="chart" type="file" accept="image/png,image/jpeg,image/webp" required>
+          <span class="upload-icon">＋</span>
+          <strong>Choose chart screenshot</strong>
+          <small>PNG, JPG or WEBP · up to 8 MB</small>
+          <img id="preview" alt="Chart screenshot preview" hidden>
+        </label>
+        <div class="fields">
+          <label>Market
+            <select name="market" id="market"><option>XAUUSD</option><option>EURUSD</option><option>GBPUSD</option><option>BTCUSD</option><option>Other</option></select>
+          </label>
+          <label>Timeframe
+            <select name="timeframe" id="timeframe"><option>5m</option><option>15m</option><option>1h</option><option>4h</option><option>1D</option></select>
+          </label>
+        </div>
+        <button id="analyzeBtn" type="submit">Prepare analysis <span>→</span></button>
+        <p class="fine">No trades are placed. Any future output is educational and may be wrong.</p>
+      </form>
+    </section>
+
+    <section class="panel results" id="results" aria-live="polite">
+      <div class="panel-head"><div><h2>Analysis workspace</h2><p>Results will appear here after AI is connected.</p></div><span class="step">02 / REVIEW</span></div>
+      <div class="empty" id="emptyState"><div class="scan">⌁</div><strong>Waiting for chart</strong><p>Upload an image to validate the input and start the analysis workflow.</p></div>
+      <div id="message" class="message" hidden></div>
+      <div class="metric-grid">
+        <div class="metric"><small>MARKET STRUCTURE</small><strong>—</strong><span>BOS / CHoCH</span></div>
+        <div class="metric"><small>LIQUIDITY</small><strong>—</strong><span>Sweep / pools</span></div>
+        <div class="metric"><small>FAIR VALUE GAP</small><strong>—</strong><span>FVG zones</span></div>
+        <div class="metric"><small>DIRECTIONAL BIAS</small><strong>—</strong><span>Not yet assessed</span></div>
+      </div>
+      <p class="disclaimer">The dashboard does not promise profitable signals. Confirm any educational observations independently and use risk controls.</p>
+    </section>
+    <footer>SMC Analyzer · Starter build · Not financial advice</footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
